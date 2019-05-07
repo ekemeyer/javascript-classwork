@@ -1,32 +1,17 @@
-// Given a word, return the pig latin version of that word
-
 function getVowels() {
     return ['a', 'e', 'i', 'o', 'u'];
 }
 
 function isConsonant(letter) {
     var vowels = getVowels();
-
     if (vowels.includes(letter)) {
-        return false;
+         return false;
     }
-    
     return true;
-}
-
-function isVowel(letter) {
-    var vowels = getVowels();
-    if (vowels.includes(letter)) {
-        return true;
-    }
 }
 
 function doesWordBeginWithConsonantSound(word) {
     return isConsonant(word[0]);
-}
-
-function doesWordBeginWithVowelSound(word) {
-    return isVowel(word[0]);
 }
 
 function tranlateWordThatBeginsWithVowelSound(word) {
@@ -68,11 +53,8 @@ function getPigLatin(inputWord) {
     if (doesWordBeginWithConsonantSound(inputWord)) {
         return translateWordThatBeginsWithConsonantSound(inputWord);
     //If the word begins with a vowel sound
-    } else if (doesWordBeginWithVowelSound(inputWord)) {
-        return tranlateWordThatBeginsWithVowelSound(inputWord);
-    //If the word
     } else {
-        return "Unable to translate " + inputWord + " to pig latin";
+          return tranlateWordThatBeginsWithVowelSound(inputWord);
     }
 }
 
